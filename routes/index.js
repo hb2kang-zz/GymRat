@@ -3,7 +3,7 @@
 module.exports = function(app) {
 
     app.get('/', function (req, res) {
-        res.sendFile(__dirname + '/public/index.html')
+        res.render('index', { title: 'Gym Rat'  });
     })
 
     app.get('/results', function (req, res) {

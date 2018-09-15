@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/hb2kang/GymRat#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.14"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
