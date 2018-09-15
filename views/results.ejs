@@ -33,7 +33,37 @@
         return net.estimateSinglePose(imageElement, imageScaleFactor, flipHorizontal, outputStride)
       }).then(function(pose){
         console.log(pose);
-      })
+        var parsed_data = JSON.parse(pose);
+      }).then(function(parsed_data){
+        // [0,1] = [x,y]
+        // Get center of balance points
+        left_wrist = new Array(parsed_data.keypoints[9].position.x, parsed_data.keypoints[9]position.y);
+        left_ankle = new Array(parsed_data.keypoints[15].position.x, parsed_data.keypoints[15]position.y);
+
+        // Get depth points
+        left_knee = new Array(parsed_data.keypoints[13].position.x, parsed_data.keypoints[13]position.y);
+        left_hip = new Array(parsed_data.keypoints[11].position.x, parsed_data.keypoints[11]position.y);
+
+        return checkValues(left_wrist, left_ankle, left_hip, left_knee)
+      });
+
+      // Determine if points fall within margin of error
+      function checkValues(left_wrist, left_ankle, left_hip, left_knee) {
+        // Check bar and feet alignment
+        if (Math.abs(left_wrist[0]-left_ankle[0]) > 0) {
+          console.log("You need to align your bar with the middle of your feet for proper balance!");
+          return false;     
+        }
+        else
+        {
+          // Check depth of motion
+          if (left_hip[1]-left_knee[1] > 0) {
+            console.log("You need to lower your hips below your knees for a full range of motion!");
+            return false;
+          }
+        }
+        return true;
+      }
 
     </script>
 
