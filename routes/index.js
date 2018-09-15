@@ -10,4 +10,8 @@ module.exports = function(app) {
         res.send('results')
     })
 
+    app.get('/upload', function (req, res) {
+        res.render('upload');
+    })
+
 }

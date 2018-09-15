@@ -27,8 +27,12 @@ app.set('view engine', 'ejs');
 // Set up routes
 const index = require('./routes/index');
 index(app);
-const users = require('./routes/user');
-users(app);
+const upload = require('./routes/upload');
+upload(app);
+const user = require('./routes/user');
+user(app);
+const score = require('./routes/score');
+score(app);
 
 app.listen(port, function() {
     console.log('server stared on port 3000');

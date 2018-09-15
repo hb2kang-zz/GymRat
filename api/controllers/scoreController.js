@@ -29,4 +29,4 @@ exports.delete_score = function(req, res) {
             res.send(err);
         res.json({ message: 'Score successfully deleted' });
     });
-  };
+};
