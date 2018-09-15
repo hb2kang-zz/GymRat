@@ -57,7 +57,7 @@ figure {
 }
 
 #cover {
-	background: url('img/background2.png') center center no-repeat;
+	background: url('../public/img/background2.png') center center no-repeat;
 	background-size: cover;
 
 	align-items: center;
