@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
-<body>
-    <h1>Upload a photo</h1>
-    <form id="theform" action="upload" method="POST" enctype="multipart/form-data">
-        Name:<input type="text" name="item" class="thedata"><br>
-        <br>
-        Photo:<input type="file" name="uploaded_file" class="thefile">
-        <button type="submit">Add photo</button>
-    </form>   
-</body>
+
+  <head>
+      <!-- Load TensorFlow.js -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"></script>
+      <!-- Load Posenet -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet@0.1.2"></script>
+  </head>
+
+  <body>
+
+      <h1>Upload a photo</h1>
+      <form id="theform" action="upload" method="POST" enctype="multipart/form-data">
+          Name:<input type="text" name="item" class="thedata"><br>
+          <br>
+          Photo:<input type="file" name="uploaded_file" class="thefile">
+          <button type="submit">Add photo</button>
+      </form>
+  </body>
+
 </html>

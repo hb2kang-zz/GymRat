@@ -11,6 +11,7 @@ const express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/public'));
 
 // Set up database
@@ -21,7 +22,7 @@ mongoose.Promise = global.Promise;
 
 // Register models
 const User = require('./api/models/userModel');
-const Score = require('./api/models/scoreModel'); 
+const Score = require('./api/models/scoreModel');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

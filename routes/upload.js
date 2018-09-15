@@ -4,14 +4,14 @@ const util = require('util');
 const mongoose = require('mongoose');
 var multer=require('multer');
 
-module.exports = function(app) {    
-    // Uploads 
+module.exports = function(app) {
+    // Uploads
     var schema=new mongoose.Schema({
         item:String
     });
-    
+
     var model1= mongoose.model('todomod',schema);
-    
+
     var storage = multer.diskStorage({
         destination: 'assets/uploads/',
         filename: function (req, file, cb) {
@@ -31,7 +31,7 @@ module.exports = function(app) {
 
         model1(db_data).save(function(err, data) {
             if(err) throw err
-            res.json(data);
+            res.render('results');
         })
     })
 }

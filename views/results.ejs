@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <!-- Load TensorFlow.js -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"></script>
+      <!-- Load Posenet -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet@0.1.2"></script>
+  </head>
+
+  <body>
+      <img id='squat'/>
+  </body>
+
+  <script>
+
+
+      var _img = document.getElementById('squat');
+      var newImg = new Image;
+      newImg.onload = function() {
+      _img.src = this.src;
+      }
+      newImg.src = "uploads/uploaded_file-1537042146381.jpg";
+
+      var imageScaleFactor = 0.5;
+      var outputStride = 16;
+      var flipHorizontal = false;
+
+      var imageElement = document.getElementById('squat');
+
+      posenet.load().then(function(net){
+        return net.estimateSinglePose(imageElement, imageScaleFactor, flipHorizontal, outputStride)
+      }).then(function(pose){
+        console.log(pose);
+      })
+
+    </script>
+
+</html>
