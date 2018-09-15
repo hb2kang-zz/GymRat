@@ -12,17 +12,20 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
       <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+      <link href="/style2.css" rel="stylesheet">
   </head>
 
   <body>
+    <div class="center">
 
-      <h1>Upload a photo</h1>
-      <form id="theform" action="upload" method="POST" enctype="multipart/form-data">
-          Name:<input type="text" name="item" class="thedata"><br>
-          <br>
-          Photo:<input type="file" name="uploaded_file" class="thefile">
-          <button type="submit">Add photo</button>
+      <h1 class="text">Upload the Photo or Video</h1>
+      <form id="theform" action="upload" method="POST" enctype="multipart/form-data" class="text">
+        Name:<input type="text" name="item" class="thedata"><br>
+        <br>
+        Photo:<input type="file" name="uploaded_file" class="thefile">
+        <button type="submit">Add photo</button><br>
       </form>
+    </div>
   </body>
 
 </html>
