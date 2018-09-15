@@ -43,17 +43,13 @@ figure {
 }
 
 #cover {
-	background: url('/img/background2.png') center center no-repeat;
+	background: url('/img/background3.png') center center no-repeat;
 	background-size: cover;
 
 	align-items: center;
-	height: 80%;
+	height: 100%;
 	display: flex;
 }
-/*--- Bootstrap Padding Fix --*/
-/*[class*="col-"] {
-    padding: 1rem;
-}*/
 
 .firstimage {
 	.max-width: 100%;
@@ -77,19 +73,50 @@ figure {
 }
 
 .mydopepad {
-	padding-top: 40px;
+	padding-top: 50px;
+	padding-bottom: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.screenshotpad {
+	padding-bottom: 15px;
 }
 
 .cover-buttons {
 	padding-top: 30px;
 }
 
-/*.profile-text {
-	background: rgba(0,0,0,0.8);
-	color: white
-	padding: 1.875rem;
-	border-radius: 25px;
-}*/
+.parallax {
+    background-attachment: inherit !important;
+}
+.parallax {
+    background-attachment: inherit !important;
+}
+.parallax {
+    background-attachment: inherit !important;
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    z-index: -10;
+}
+.ct-btn-scroll {
+/*    width: 49px;
+    height: 49px;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 500px;
+    z-index: 9;
+    border-radius: 50%;*/
+    -webkit-transition: background-color 0.25s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
+}
 
 /*
 Extra small (xs) devices (portrait phones, less than 576px)
