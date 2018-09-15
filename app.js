@@ -11,6 +11,8 @@ const express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + '/public'));
+
 // Set up database
 const mongoose = require('mongoose');
 const mongoDB = 'mongodb://localhost/db';
