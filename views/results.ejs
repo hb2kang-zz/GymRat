@@ -13,14 +13,15 @@
   </body>
 
   <script>
-
-
+  
       var _img = document.getElementById('squat');
       var newImg = new Image;
       newImg.onload = function() {
-      _img.src = this.src;
+        _img.src = this.src;
       }
-      newImg.src = "uploads/uploaded_file-1537042146381.jpg";
+      var imgPath = '<%= path %>'.substring(6);
+      console.log(imgPath);
+      newImg.src = imgPath;
 
       var imageScaleFactor = 0.5;
       var outputStride = 16;
