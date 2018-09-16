@@ -52,9 +52,9 @@ figure {
 }
 
 .firstimage {
-	.max-width: 100%;
-	.background-size: cover;
-	.background-position: center;
+	max-width: 100%;
+	background-size: cover;
+	background-position: center;
 }
 
 .cover-caption {
