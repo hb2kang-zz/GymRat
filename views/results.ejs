@@ -12,7 +12,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
       <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-      <link href="/style2.css" rel="stylesheet">
+      <link href="/css/style2.css" rel="stylesheet">
   </head>
 
   <body>
@@ -44,12 +44,12 @@
       }).then(function(parsed_data){
         // [0,1] = [x,y]
         // Get center of balance points
-        left_wrist = new Array(parsed_data.keypoints[9].position.x, parsed_data.keypoints[9]position.y);
-        left_ankle = new Array(parsed_data.keypoints[15].position.x, parsed_data.keypoints[15]position.y);
+        left_wrist = new Array(parsed_data.keypoints[9].position.x, parsed_data.keypoints[9], position.y);
+        left_ankle = new Array(parsed_data.keypoints[15].position.x, parsed_data.keypoints[15], position.y);
 
         // Get depth points
-        left_knee = new Array(parsed_data.keypoints[13].position.x, parsed_data.keypoints[13]position.y);
-        left_hip = new Array(parsed_data.keypoints[11].position.x, parsed_data.keypoints[11]position.y);
+        left_knee = new Array(parsed_data.keypoints[13].position.x, parsed_data.keypoints[13], position.y);
+        left_hip = new Array(parsed_data.keypoints[11].position.x, parsed_data.keypoints[11], position.y);
 
         return checkValues(left_wrist, left_ankle, left_hip, left_knee)
       });

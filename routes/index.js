@@ -1,5 +1,8 @@
 'use strict';
 
+const mongoose = require('mongoose');
+const Images = mongoose.model('Images');
+
 module.exports = function(app) {
 
     app.get('/', function (req, res) {
@@ -7,7 +10,10 @@ module.exports = function(app) {
     })
 
     app.get('/results', function (req, res) {
-        res.send('results')
+        Images.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, image) {
+            console.log(image);
+            res.render('results', { path: image.path})
+        });
     })
 
     app.get('/upload', function (req, res) {
