@@ -23,6 +23,7 @@ mongoose.Promise = global.Promise;
 // Register models
 const User = require('./api/models/userModel');
 const Score = require('./api/models/scoreModel');
+const Image = require('./api/models/imageModel');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
