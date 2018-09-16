@@ -15,6 +15,17 @@
       <link href="/css/style2.css" rel="stylesheet">
   </head>
 
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img id='squat'/>
+          <p id="feedback"></p>
+        </div>
+
+      </div>
+  </body>
+
   <script>
       var str = "";
       var _img = document.getElementById('squat');
@@ -52,45 +63,19 @@
         // Check bar and feet alignment
         if (Math.abs(left_wrist[0]-left_ankle[0]) > 15) {
           var str = "You need to align your bar with the middle of your feet for proper balance!";
-          return str;     
+          document.getElementById("feedback").innerHTML = str;
         }
         else
         {
           // Check depth of motion
           if (left_hip[1]-left_knee[1] > 0) {
             var str = "You need to lower your hips below your knees for a full range of motion!";
-            return str;
+            document.getElementById("feedback").innerHTML = str;
           }
         }
         var str = "You have good form!";
-        return str;
+        document.getElementById("feedback").innerHTML = str;
       }
-    </script>
-
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <img id='squat'/>
-          <script type="text/javascript">
-            document.write(str)
-          </script>
-        </div>
-
-        <div class="col">
-          <div id="video-demo-container">
-            <button id="upload-button">Select MP4 Video</button> 
-            <input type="file" id="file-input" accept="video/mp4" />
-            <video id="video-element" controls>
-                <source type="video/mp4">
-            </video>
-            <canvas id="canvas-element"></canvas>
-            <div id="thumbnail-container">
-                 Seek to <select id="set-video-seconds"></select> seconds <a id="download-link" href="#">Download Thumbnail</a>
-            </div>
-          </div>
-        </div>
-      </div>
-  </body>
+  </script>
   
 </html>
