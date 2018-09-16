@@ -68,10 +68,29 @@
     </script>
 
   <body>
-      <img id='squat'/>
-      <script type="text/javascript">
-        document.write(str)
-      </script>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img id='squat'/>
+          <script type="text/javascript">
+            document.write(str)
+          </script>
+        </div>
+
+        <div class="col">
+          <div id="video-demo-container">
+            <button id="upload-button">Select MP4 Video</button> 
+            <input type="file" id="file-input" accept="video/mp4" />
+            <video id="video-element" controls>
+                <source type="video/mp4">
+            </video>
+            <canvas id="canvas-element"></canvas>
+            <div id="thumbnail-container">
+                 Seek to <select id="set-video-seconds"></select> seconds <a id="download-link" href="#">Download Thumbnail</a>
+            </div>
+          </div>
+        </div>
+      </div>
   </body>
   
 </html>
