@@ -15,12 +15,8 @@
       <link href="/css/style2.css" rel="stylesheet">
   </head>
 
-  <body>
-      <img id='squat'/>
-  </body>
-
   <script>
-  
+      var str = "";
       var _img = document.getElementById('squat');
       var newImg = new Image;
       newImg.onload = function() {
@@ -55,20 +51,27 @@
       function checkValues(left_wrist, left_ankle, left_hip, left_knee) {
         // Check bar and feet alignment
         if (Math.abs(left_wrist[0]-left_ankle[0]) > 15) {
-          console.log("You need to align your bar with the middle of your feet for proper balance!");
-          return false;     
+          var str = "You need to align your bar with the middle of your feet for proper balance!";
+          return str;     
         }
         else
         {
           // Check depth of motion
           if (left_hip[1]-left_knee[1] > 0) {
-            console.log("You need to lower your hips below your knees for a full range of motion!");
-            return false;
+            var str = "You need to lower your hips below your knees for a full range of motion!";
+            return str;
           }
         }
-        return true;
+        var str = "You have good form!";
+        return str;
       }
-
     </script>
 
+  <body>
+      <img id='squat'/>
+      <script type="text/javascript">
+        document.write(str)
+      </script>
+  </body>
+  
 </html>
