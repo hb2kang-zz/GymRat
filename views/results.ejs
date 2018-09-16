@@ -36,21 +36,22 @@
   </head>
 
   <body>
-    <div class="container row resultspad">
-      <div class="col outsideWrapper">
-        <div class="insideWrapper border-right">
-          <img id="squat" class="coveredImage"/>
-          <canvas id="output" class="coveringCanvas"/>
+    <div class="container resultspad horizontal vertical  ">
+      <div class="row">
+        <div class="col">
+          <img id='squat'/>
+          <canvas id="output" />
         </div>
-      </div>
-      <div class="col">
-        <p id="feedback"></p>
+
+        <div class="col ">
+            <p id="feedback"></p>
+        </div>
+
       </div>
     </div>
   </body>
 
   <script>
-      var str = "";
       var _img = document.getElementById('squat');
       var newImg = new Image;
       newImg.onload = function() {
@@ -165,22 +166,23 @@
 
       // Determine if points fall within margin of error
       function checkValues(left_wrist, left_ankle, left_hip, left_knee) {
+        var good = true;
+        var str = ""
         // Check bar and feet alignment
-        if (Math.abs(left_wrist[0]-left_ankle[0]) > 15) {
-          str = "You need to align your bar with the middle of your feet for proper balance!";
-          document.getElementById("feedback").innerHTML = str;
-          return;
+        if (Math.abs(left_wrist[0]-left_ankle[0]) > 50) {
+          str = "You need to align your bar with the middle of your feet for proper balance! ";
+          // document.getElementById("feedback").innerHTML = str;
+          good = false;
         }
-        else
-        {
           // Check depth of motion
-          if (left_hip[1]-left_knee[1] > 0) {
-            str = "You need to lower your hips below your knees for a full range of motion!";
-            document.getElementById("feedback").innerHTML = str;
-            return;
-          }
+        if (left_knee[1]-left_hip[1] > 15) {
+          str += "You need to lower your hips below your knees for a full range of motion! ";
+          //document.getElementById("feedback").innerHTML = str;
+          good = false;
         }
-        str = "You have good form!";
+        if (good) {
+          str = "You have good form!";
+        }
         document.getElementById("feedback").innerHTML = str;
       }
   </script>
