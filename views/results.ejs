@@ -62,7 +62,7 @@
       function checkValues(left_wrist, left_ankle, left_hip, left_knee) {
         // Check bar and feet alignment
         if (Math.abs(left_wrist[0]-left_ankle[0]) > 15) {
-          str = "You need to align your bar with the middle of your feet for proper balance!";
+          str = "You need to align the bar with the middle of your feet for proper balance. Keep trying!";
           document.getElementById("feedback").innerHTML = str;
           return;
         }
@@ -70,12 +70,12 @@
         {
           // Check depth of motion
           if (left_hip[1]-left_knee[1] > 0) {
-            str = "You need to lower your hips below your knees for a full range of motion!";
+            str = "You need to lower your hips below your knees for a full range of motion. Keep trying!";
             document.getElementById("feedback").innerHTML = str;
             return;
           }
         }
-        str = "You have good form!";
+        str = "You have good form! Can you feel the gains?";
         document.getElementById("feedback").innerHTML = str;
       }
   </script>
