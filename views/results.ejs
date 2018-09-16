@@ -70,10 +70,13 @@
       const canvas = document.getElementById('output');
       const ctx = canvas.getContext('2d');
 
-      const videoWidth = imageElement.width;
+      const videoWidth = 600;
       console.log(videoWidth)
-      const videoHeight = imageElement.height;
+      const videoHeight = 500;
       console.log(videoHeight)
+
+      canvas.width = videoHeight;
+      canvas.height = videoHeight;
 
       ctx.clearRect(0, 0, videoWidth, videoHeight);
 
